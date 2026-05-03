@@ -109,30 +109,23 @@
   .bg-gradient-primary { background: var(--gradient-primary); }
   .bg-gradient-hero { background: var(--gradient-hero); }
   .glass {
-    background: var(--gradient-card);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid oklch(1 0 0 / 0.08);
+    background: oklch(1 0 0 / 0.025);
+    border: 1px solid oklch(1 0 0 / 0.07);
   }
   .glass-strong {
-    background: linear-gradient(145deg, oklch(1 0 0 / 0.08), oklch(1 0 0 / 0.02));
-    backdrop-filter: blur(24px);
-    border: 1px solid oklch(1 0 0 / 0.12);
+    background: oklch(1 0 0 / 0.04);
+    border: 1px solid oklch(1 0 0 / 0.09);
   }
   .shadow-glow { box-shadow: var(--shadow-glow); }
   .shadow-elegant { box-shadow: var(--shadow-elegant); }
   .grid-bg {
     background-image:
-      linear-gradient(oklch(1 0 0 / 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(1 0 0 / 0.04) 1px, transparent 1px);
-    background-size: 56px 56px;
+      linear-gradient(oklch(1 0 0 / 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(1 0 0 / 0.025) 1px, transparent 1px);
+    background-size: 64px 64px;
   }
-  .glow-orb {
-    position: absolute;
-    border-radius: 9999px;
-    filter: blur(80px);
-    pointer-events: none;
-  }
+  .glow-orb { display: none; }
+  .hairline { border-top: 1px solid oklch(1 0 0 / 0.07); }
 }
 
 @keyframes float {
