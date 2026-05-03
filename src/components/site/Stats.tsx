@@ -26,17 +26,17 @@ export function Stats() {
   return (
     <section className="py-20 relative">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 border-y border-border">
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="glass rounded-2xl p-6 text-center"
+              transition={{ delay: i * 0.08 }}
+              className="py-10 px-6 text-center border-r border-border last:border-r-0 [&:nth-child(2)]:max-md:border-r-0 max-md:[&:nth-child(-n+2)]:border-b"
             >
-              <div className="text-4xl md:text-5xl font-bold text-gradient font-display">
+              <div className="text-4xl md:text-5xl font-semibold tracking-tight">
                 <Counter to={s.value} suffix={s.suffix} />
               </div>
               <div className="mt-2 text-sm text-muted-foreground">{s.label}</div>

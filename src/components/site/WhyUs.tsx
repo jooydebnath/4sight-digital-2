@@ -14,27 +14,25 @@ export function WhyUs() {
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           <div className="relative">
-            <div className="absolute -inset-6 bg-gradient-primary opacity-30 blur-3xl rounded-full" />
-            <div className="relative rounded-3xl overflow-hidden glass-strong">
+            <div className="rounded-2xl overflow-hidden border border-border">
               <img src={team} alt="4sight team" loading="lazy" width={1280} height={896} className="w-full h-auto" />
             </div>
-            <div className="absolute -bottom-6 -left-6 glass-strong rounded-2xl px-5 py-4 shadow-elegant">
+            <div className="absolute -bottom-6 -left-6 bg-card border border-border rounded-xl px-5 py-4 shadow-elegant">
               <div className="text-xs text-muted-foreground">Avg. engagement NPS</div>
-              <div className="text-3xl font-bold text-gradient">72</div>
+              <div className="text-3xl font-semibold tracking-tight">72</div>
             </div>
           </div>
 
           <div>
-            <span className="text-xs uppercase tracking-[0.3em] text-primary">Why 4sight</span>
-            <h2 className="mt-4 text-4xl md:text-5xl font-bold leading-tight">
-              The technical edge of a startup, the rigor of an{" "}
-              <span className="text-gradient">enterprise.</span>
+            <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Why 4sight</span>
+            <h2 className="mt-4 text-4xl md:text-5xl font-semibold leading-tight tracking-tight">
+              The technical edge of a startup, the rigor of an enterprise.
             </h2>
             <div className="mt-10 grid sm:grid-cols-2 gap-6">
               {points.map((p) => (
                 <div key={p.title} className="flex gap-4">
-                  <div className="h-11 w-11 shrink-0 rounded-xl bg-gradient-primary grid place-items-center shadow-glow">
-                    <p.icon className="h-5 w-5 text-primary-foreground" />
+                  <div className="h-10 w-10 shrink-0 rounded-lg border border-border grid place-items-center">
+                    <p.icon className="h-4.5 w-4.5 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold">{p.title}</h3>

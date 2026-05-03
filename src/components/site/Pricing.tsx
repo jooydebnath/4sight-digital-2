@@ -31,30 +31,30 @@ export function Pricing() {
     <section id="pricing" className="py-28 relative">
       <div className="container mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="text-xs uppercase tracking-[0.3em] text-primary">Engagements</span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-            Transparent partnerships, <span className="text-gradient">predictable outcomes.</span>
+          <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Engagements</span>
+          <h2 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tight">
+            Transparent partnerships, predictable outcomes.
           </h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
           {tiers.map((t) => (
             <div
               key={t.name}
-              className={`relative rounded-3xl p-8 flex flex-col ${
+              className={`relative rounded-2xl p-8 flex flex-col border ${
                 t.featured
-                  ? "glass-strong shadow-glow border-primary/40"
-                  : "glass"
+                  ? "border-primary/40 bg-card"
+                  : "border-border bg-card/40"
               }`}
             >
               {t.featured && (
-                <div className="absolute -top-3 left-8 bg-gradient-primary text-primary-foreground text-xs font-semibold px-3 py-1 rounded-full">
+                <div className="absolute -top-3 left-8 bg-foreground text-background text-xs font-semibold px-3 py-1 rounded-full">
                   Most popular
                 </div>
               )}
-              <h3 className="text-2xl font-semibold">{t.name}</h3>
+              <h3 className="text-xl font-semibold">{t.name}</h3>
               <p className="text-sm text-muted-foreground mt-2 min-h-[40px]">{t.desc}</p>
               <div className="mt-6 flex items-baseline gap-1">
-                <span className="text-5xl font-bold font-display">{t.price}</span>
+                <span className="text-5xl font-semibold tracking-tight">{t.price}</span>
                 <span className="text-muted-foreground">{t.period}</span>
               </div>
               <ul className="mt-8 space-y-3 flex-1">
@@ -66,7 +66,7 @@ export function Pricing() {
                 ))}
               </ul>
               <Button
-                className={`mt-8 ${t.featured ? "bg-gradient-primary text-primary-foreground shadow-glow" : ""}`}
+                className={`mt-8 ${t.featured ? "bg-foreground text-background hover:bg-foreground/90" : ""}`}
                 variant={t.featured ? "default" : "outline"}
                 asChild
               >
