@@ -5,10 +5,9 @@ export function ChatFAB() {
     <a
       href="#contact"
       aria-label="Chat with us"
-      className="fixed bottom-6 right-6 z-40 h-14 w-14 rounded-full bg-gradient-primary text-primary-foreground grid place-items-center shadow-glow hover:scale-110 transition-transform"
+      className="fixed bottom-6 right-6 z-40 h-12 w-12 rounded-full bg-foreground text-background grid place-items-center shadow-elegant hover:scale-105 transition-transform"
     >
-      <span className="absolute inset-0 rounded-full bg-primary/40 animate-ping" />
-      <MessageCircle className="relative h-6 w-6" />
+      <MessageCircle className="h-5 w-5" />
     </a>
   );
 }

@@ -10,7 +10,7 @@ const items = [
     name: "Marcus Webb", role: "VP Engineering, Northwind",
   },
   {
-    quote: "Best agency partnership we&apos;ve had in a decade. The design quality alone justified the engagement.",
+    quote: "Best agency partnership we've had in a decade. The design quality alone justified the engagement.",
     name: "Priya Anand", role: "Head of Product, Lumen",
   },
 ];
@@ -20,22 +20,22 @@ export function Testimonials() {
     <section className="py-28 relative">
       <div className="container mx-auto px-6">
         <div className="max-w-2xl mb-14">
-          <span className="text-xs uppercase tracking-[0.3em] text-primary">Clients</span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold">
-            Loved by teams that <span className="text-gradient">don&apos;t settle.</span>
+          <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Clients</span>
+          <h2 className="mt-4 text-4xl md:text-5xl font-semibold tracking-tight">
+            Loved by teams that don&apos;t settle.
           </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-5">
           {items.map((t) => (
-            <figure key={t.name} className="glass rounded-2xl p-7 flex flex-col gap-5">
+            <figure key={t.name} className="rounded-2xl border border-border bg-card/40 p-7 flex flex-col gap-5">
               <div className="flex gap-0.5 text-primary">
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="h-4 w-4 fill-current" />
+                  <Star key={i} className="h-3.5 w-3.5 fill-current" />
                 ))}
               </div>
-              <blockquote className="text-base leading-relaxed text-foreground/90" dangerouslySetInnerHTML={{ __html: t.quote }} />
-              <figcaption className="flex items-center gap-3 mt-auto">
-                <div className="h-10 w-10 rounded-full bg-gradient-primary grid place-items-center text-sm font-bold text-primary-foreground">
+              <blockquote className="text-base leading-relaxed text-foreground/90">{t.quote}</blockquote>
+              <figcaption className="flex items-center gap-3 mt-auto pt-4 border-t border-border">
+                <div className="h-9 w-9 rounded-full border border-border grid place-items-center text-xs font-semibold">
                   {t.name.split(" ").map((n) => n[0]).join("")}
                 </div>
                 <div>

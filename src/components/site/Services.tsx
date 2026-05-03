@@ -15,40 +15,36 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-28 relative overflow-hidden">
-      <div className="glow-orb h-[400px] w-[400px] bg-accent/20 top-1/3 -left-40" />
-      <div className="container mx-auto px-6 relative">
+    <section id="services" className="py-28 relative">
+      <div className="container mx-auto px-6">
         <div className="max-w-2xl mb-16">
-          <span className="text-xs uppercase tracking-[0.3em] text-primary">What we do</span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold leading-tight">
-            A full-stack partner for <span className="text-gradient">digital transformation</span>
+          <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">What we do</span>
+          <h2 className="mt-4 text-4xl md:text-5xl font-semibold leading-tight tracking-tight">
+            A full-stack partner for digital transformation
           </h2>
           <p className="mt-5 text-lg text-muted-foreground">
             From product strategy to launch and scale — one team, one accountable outcome.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 border border-border rounded-2xl overflow-hidden bg-card/30">
           {services.map((s, i) => (
             <motion.div
               key={s.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-              className="group glass rounded-2xl p-7 hover:border-primary/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-glow relative overflow-hidden"
+              transition={{ duration: 0.4, delay: i * 0.04 }}
+              className="group p-8 border-b border-r border-border last:border-r-0 hover:bg-card/60 transition-colors"
             >
-              <div className="absolute inset-0 bg-gradient-primary opacity-0 group-hover:opacity-[0.06] transition-opacity duration-500" />
-              <div className="relative">
-                <div className="h-12 w-12 rounded-xl glass-strong grid place-items-center mb-5 group-hover:bg-gradient-primary transition-all duration-500">
-                  <s.icon className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2 flex items-center justify-between">
-                  {s.title}
-                  <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+              <div className="h-10 w-10 rounded-lg border border-border grid place-items-center mb-5">
+                <s.icon className="h-4.5 w-4.5 text-primary" />
               </div>
+              <h3 className="text-lg font-semibold mb-2 flex items-center justify-between">
+                {s.title}
+                <ArrowUpRight className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
             </motion.div>
           ))}
         </div>

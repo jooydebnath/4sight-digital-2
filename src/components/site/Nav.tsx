@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const links = [
@@ -7,7 +7,7 @@ const links = [
   { href: "#work", label: "Work" },
   { href: "#process", label: "Process" },
   { href: "#pricing", label: "Pricing" },
-  { href: "#insights", label: "Insights" },
+  { href: "#insights", label: "FAQ" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -23,25 +23,21 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled ? "py-3" : "py-5"
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        scrolled ? "bg-background/80 backdrop-blur-md border-b border-border" : ""
       }`}
     >
       <div className="container mx-auto px-6">
-        <nav
-          className={`flex items-center justify-between rounded-2xl px-5 py-3 transition-all duration-500 ${
-            scrolled ? "glass-strong shadow-elegant" : ""
-          }`}
-        >
-          <a href="#top" className="flex items-center gap-2 group">
-            <div className="relative h-9 w-9 rounded-xl bg-gradient-primary grid place-items-center shadow-glow">
-              <Sparkles className="h-5 w-5 text-primary-foreground" strokeWidth={2.5} />
+        <nav className="flex items-center justify-between h-16">
+          <a href="#top" className="flex items-center gap-2">
+            <div className="h-7 w-7 rounded-md bg-foreground grid place-items-center">
+              <span className="text-background font-display text-sm font-bold">4</span>
             </div>
-            <span className="font-display text-lg font-semibold tracking-tight">
+            <span className="font-display text-base font-semibold tracking-tight">
               4sight<span className="text-primary">.</span>
             </span>
           </a>
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-7">
             {links.map((l) => (
               <a
                 key={l.href}
@@ -52,11 +48,11 @@ export function Nav() {
               </a>
             ))}
           </div>
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2">
             <Button variant="ghost" size="sm" asChild>
               <a href="#contact">Sign in</a>
             </Button>
-            <Button size="sm" className="bg-gradient-primary text-primary-foreground hover:opacity-90 shadow-glow" asChild>
+            <Button size="sm" className="bg-foreground text-background hover:bg-foreground/90" asChild>
               <a href="#contact">Book a call</a>
             </Button>
           </div>
@@ -65,17 +61,17 @@ export function Nav() {
             onClick={() => setOpen(!open)}
             aria-label="Menu"
           >
-            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </nav>
         {open && (
-          <div className="md:hidden mt-2 glass-strong rounded-2xl p-5 flex flex-col gap-3">
+          <div className="md:hidden mb-3 border border-border rounded-xl bg-card p-5 flex flex-col gap-3">
             {links.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="py-2 text-foreground/90">
+              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="py-1.5 text-foreground/90">
                 {l.label}
               </a>
             ))}
-            <Button className="bg-gradient-primary text-primary-foreground mt-2" asChild>
+            <Button className="bg-foreground text-background mt-2" asChild>
               <a href="#contact">Book a call</a>
             </Button>
           </div>
